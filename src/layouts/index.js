@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Nav from '../components/Nav'
 import './index.css'
 
 const Layout = ({ children, data }) => (
@@ -14,7 +13,6 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Nav />
     <div
       style={{
         margin: '0 auto',

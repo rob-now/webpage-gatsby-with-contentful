@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
 import { createClient } from 'contentful'
 import contentfulConfig from '../../.contentful.json'
+import Hero from '../layouts/Hero'
 
 class IndexPage extends Component {
   state = {
@@ -27,20 +27,7 @@ class IndexPage extends Component {
   render() {
     const { contentfulItems } = this.state
 
-    return (
-      <div>
-        {contentfulItems.map(item => {
-          console.log(item)
-          return (
-            <div>
-              <h2>{item.fields.heroTitle}</h2>
-              <h3>{item.fields.heroBox1Title}</h3>
-              <p>{item.fields.heroBox2Description}</p>
-            </div>
-          )
-        })}
-      </div>
-    )
+    return <Hero contentfulItems={contentfulItems} />
   }
 }
 
