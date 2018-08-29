@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 const HeroContainer = styled.div`
   background: #122636;
+  padding-top: 43px;
 `
 
 const ContainerInner = styled.div`
@@ -19,6 +20,8 @@ class Hero extends Component {
     return (
       <HeroContainer>
         <ContainerInner>
+          <Nav />
+
           <HeroTitle contentfulItems={contentfulItems} />
         </ContainerInner>
       </HeroContainer>

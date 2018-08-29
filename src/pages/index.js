@@ -30,7 +30,6 @@ class IndexPage extends Component {
 
     return (
       <Fragment>
-        <Nav />
         <Hero contentfulItems={contentfulItems} />
       </Fragment>
     )
