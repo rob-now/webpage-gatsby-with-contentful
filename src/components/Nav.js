@@ -1,12 +1,36 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import styled from 'styled-components'
+
+const Navigation = styled.nav`
+  display: flex;
+  justify-content: space-between;
+`
+
+const NavigationBrand = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const BrandText = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const BrandTextMain = styled.span`
+  text-transform: uppercase;
+`
+
+const NavigationItems = styled.ul`
+  list-style-type: none;
+  display: flex;
+`
 
 const Nav = () => (
   <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
+  // style={{
+  //   background: 'rebeccapurple',
+  //   marginBottom: '1.45rem',
+  // }}
   >
     {/* <div
       style={{
@@ -27,8 +51,15 @@ const Nav = () => (
         </Link>
       </h1>
     </div> */}
-    <nav>
-      <ul>
+    <Navigation>
+      <NavigationBrand>
+        <div>logo</div>
+        <BrandText>
+          <BrandTextMain>Trucking</BrandTextMain>
+          <span>Lotistics & Transportation</span>
+        </BrandText>
+      </NavigationBrand>
+      <NavigationItems>
         <li>
           <a href="#">Home</a>
         </li>
@@ -50,8 +81,8 @@ const Nav = () => (
         <li>
           <button type="button">Search</button>
         </li>
-      </ul>
-    </nav>
+      </NavigationItems>
+    </Navigation>
   </div>
 )
 

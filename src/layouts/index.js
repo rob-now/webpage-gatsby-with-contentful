@@ -14,7 +14,7 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Nav siteTitle={data.site.siteMetadata.title} />
+    <Nav />
     <div
       style={{
         margin: '0 auto',
