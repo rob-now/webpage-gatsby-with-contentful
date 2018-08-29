@@ -5,7 +5,7 @@ import contentfulConfig from '../../.contentful.json'
 
 class IndexPage extends Component {
   state = {
-    items: [],
+    contentfulItems: [],
   }
 
   componentDidMount() {
@@ -16,30 +16,29 @@ class IndexPage extends Component {
 
     client
       .getEntries()
-      .then(response => {
-        console.log(response.items)
+      .then(res => {
         this.setState({
-          items: response.items,
+          contentfulItems: res.items,
         })
       })
-      .catch(console.error)
+      .catch(err => err.message)
   }
 
   render() {
-    if (!this.state.items.length) return <p>No items found.</p>
+    const { contentfulItems } = this.state
 
     return (
       <div>
-        {/* {this.state.items.map(item => {
+        {contentfulItems.map(item => {
           console.log(item)
           return (
             <div>
-              <h2>{item.fields.title}</h2>
-              <h3>{item.fields.tile1Title}</h3>
-              <p>{item.fields.tile1Description}</p>
+              <h2>{item.fields.heroTitle}</h2>
+              <h3>{item.fields.heroBox1Title}</h3>
+              <p>{item.fields.heroBox2Description}</p>
             </div>
           )
-        })} */}
+        })}
       </div>
     )
   }
