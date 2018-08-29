@@ -5,6 +5,7 @@ const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
   position: fixed;
+  background: #fdfdfd;
 `
 
 const NavigationBrand = styled.div`
