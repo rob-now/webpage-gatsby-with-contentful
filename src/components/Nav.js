@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
+  position: fixed;
 `
 
 const NavigationBrand = styled.div`
@@ -26,31 +27,7 @@ const NavigationItems = styled.ul`
 `
 
 const Nav = () => (
-  <div
-  // style={{
-  //   background: 'rebeccapurple',
-  //   marginBottom: '1.45rem',
-  // }}
-  >
-    {/* <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div> */}
+  <Fragment>
     <Navigation>
       <NavigationBrand>
         <div>logo</div>
@@ -83,7 +60,7 @@ const Nav = () => (
         </li>
       </NavigationItems>
     </Navigation>
-  </div>
+  </Fragment>
 )
 
 export default Nav

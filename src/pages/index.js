@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { createClient } from 'contentful'
 import contentfulConfig from '../../.contentful.json'
-import Hero from '../layouts/Hero'
+import Hero from '../components/Hero'
+import Nav from '../components/Nav'
 
 class IndexPage extends Component {
   state = {
@@ -27,7 +28,12 @@ class IndexPage extends Component {
   render() {
     const { contentfulItems } = this.state
 
-    return <Hero contentfulItems={contentfulItems} />
+    return (
+      <Fragment>
+        <Nav />
+        <Hero contentfulItems={contentfulItems} />
+      </Fragment>
+    )
   }
 }
 
