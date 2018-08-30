@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { createClient } from 'contentful'
 import contentfulConfig from '../../.contentful.json'
 import Hero from '../components/hero/Hero'
+import WhatWeOffer from '../components/whatWeOffer/WhatWeOffer'
 
 class IndexPage extends Component {
   state = {
@@ -30,6 +31,7 @@ class IndexPage extends Component {
     return (
       <Fragment>
         <Hero contentfulItems={contentfulItems} />
+        <WhatWeOffer />
       </Fragment>
     )
   }
