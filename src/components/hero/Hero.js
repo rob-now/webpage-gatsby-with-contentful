@@ -4,7 +4,7 @@ import HeroTitle from './HeroTitle'
 import styled from 'styled-components'
 import ReadMoreButton from './ReadMoreButton'
 
-const HeroContainer = styled.div`
+const StyledHeroContainer = styled.div`
   background: #122636;
   padding-top: 43px;
   height: 852px;
@@ -12,18 +12,18 @@ const HeroContainer = styled.div`
   border-bottom: 1px solid #223443;
 `
 
-const HeroContainerBottom = styled.div`
+const StyledHeroContainerBottom = styled.div`
   background: #1b2936;
   height: 335px;
 `
 
-const ContainerInner = styled.div`
+const StyledContainerInner = styled.div`
   margin: 0 auto;
   max-width: 1140px;
   position: relative;
 `
 
-const StyledHeroBoxesContainer = styled(ContainerInner)`
+const StyledHeroBoxesContainer = styled(StyledContainerInner)`
   display: flex;
   position: absolute;
   top: -200px;
@@ -76,14 +76,14 @@ class Hero extends Component {
 
     return (
       <Fragment>
-        <HeroContainer>
-          <ContainerInner>
+        <StyledHeroContainer>
+          <StyledContainerInner>
             <Nav />
             <HeroTitle contentfulItems={contentfulItems} />
-          </ContainerInner>
-        </HeroContainer>
-        <HeroContainerBottom>
-          <ContainerInner>
+          </StyledContainerInner>
+        </StyledHeroContainer>
+        <StyledHeroContainerBottom>
+          <StyledContainerInner>
             <StyledHeroBoxesContainer>
               <StyledHeroBox>
                 <StyledHeroBoxTop>
@@ -133,8 +133,8 @@ class Hero extends Component {
                 </StyledHeroBox>
               </StyledHeroBox>
             </StyledHeroBoxesContainer>
-          </ContainerInner>
-        </HeroContainerBottom>
+          </StyledContainerInner>
+        </StyledHeroContainerBottom>
       </Fragment>
     )
   }
