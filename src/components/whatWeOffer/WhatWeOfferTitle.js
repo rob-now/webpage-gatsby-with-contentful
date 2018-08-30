@@ -21,7 +21,7 @@ const StyledSubTitle = styled.span`
 const StyledLine = styled.span`
   display: block;
   width: 30px;
-  border: 3px solid #fdc300;
+  border-bottom: 3px solid #fdc300;
   margin: 0 auto;
 `
 
