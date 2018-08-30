@@ -3,10 +3,20 @@ import styled from 'styled-components'
 
 const H1 = styled.h1`
   text-transform: uppercase;
-  width: 320px;
-  line-height: 32px;
-  padding-top: 312px;
+  width: 550px;
+  line-height: 60px;
+  padding-top: 188px;
   color: #fff;
+  font-size: 72px;
+  position: relative;
+`
+
+const StyledLine = styled.span`
+  position: absolute;
+  top: 171px;
+  left: 2px;
+  border-bottom: 4px solid #fdc300;
+  width: 66px;
 `
 
 class HeroTitle extends Component {
@@ -17,7 +27,10 @@ class HeroTitle extends Component {
     return (
       <div>
         {contentfulItems.map(item => (
-          <H1 key={`heroTitle-${item.sys.id}`}>{item.fields.heroTitle}</H1>
+          <H1 key={`heroTitle-${item.sys.id}`}>
+            <StyledLine />
+            {item.fields.heroTitle}
+          </H1>
         ))}
       </div>
     )
