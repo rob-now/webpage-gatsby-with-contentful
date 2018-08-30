@@ -64,8 +64,11 @@ export default ({ id, img, contentfulItems, titleId, descriptionId }) => {
             <Fragment key={`whatWeOfferBox${id}-${item.sys.id}`}>
               <StyledWwoBoxIcon src={img} alt={item.fields[titleId]} />
               <StyledWwoBoxContent>
-                <StyledH3>{item.fields[titleId]}</StyledH3>
-                <StyledParagraph>{item.fields[descriptionId]}</StyledParagraph>
+                <StyledH3>{item.fields[titleId] || 'Lorem ipsum'}</StyledH3>
+                <StyledParagraph>
+                  {item.fields[descriptionId] ||
+                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus nulla labore provident repellendus assumenda consequatur...'}
+                </StyledParagraph>
               </StyledWwoBoxContent>
             </Fragment>
           )

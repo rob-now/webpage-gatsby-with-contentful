@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const StyledH3 = styled.h3`
   font-size: 18px;
   font-weight: bold;
-  // line-height: 60px;
   color: #333;
   text-transform: uppercase;
   margin: 44px 0 24px;

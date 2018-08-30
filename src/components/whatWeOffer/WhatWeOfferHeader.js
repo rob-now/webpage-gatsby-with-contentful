@@ -30,8 +30,10 @@ export default ({ contentfulItems }) => {
     item =>
       item.sys.contentType.sys.id === 'whatWeOffer' && (
         <Fragment key={`whatWeOfferHeader-${item.sys.id}`}>
-          <StyledH2>{item.fields.whatWeOfferTitle}</StyledH2>
-          <StyledSubTitle>{item.fields.whatWeOfferSubTitle}</StyledSubTitle>
+          <StyledH2>{item.fields.whatWeOfferTitle || 'Lorem ipsum'}</StyledH2>
+          <StyledSubTitle>
+            {item.fields.whatWeOfferSubTitle || 'Lorem ipsum'}
+          </StyledSubTitle>
           <StyledLine />
         </Fragment>
       )

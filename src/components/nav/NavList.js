@@ -20,9 +20,11 @@ const StyledNavigationItem = styled.li`
   padding: 0 10px;
   margin: 0 23px 0 0;
   height: 100%;
+  transition: background 0.3s;
   &:hover {
     background: #f6f6f6;
     cursor: pointer;
+    transition: background 0.3s;
   }
 `
 
