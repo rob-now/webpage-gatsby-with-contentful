@@ -73,6 +73,14 @@ const StyledReadMoreText = styled.span`
   text-transform: uppercase;
   background: #1b2936;
   color: #fff;
+  transition: background 0.3s;
+
+  ${({ hovered }) =>
+    hovered &&
+    `
+      background: #006db7;
+      transition: background 0.3s;
+    `};
 `
 
 const StyledReadMoreArrow = styled.span`
@@ -80,6 +88,14 @@ const StyledReadMoreArrow = styled.span`
   height: 34px;
   line-height: 30px;
   background: #2f3840;
+  transition: background 0.3s;
+
+  ${({ hovered }) =>
+    hovered &&
+    `
+      background: #037ed1;
+      transition: background 0.3s;
+    `};
 `
 
 class Hero extends Component {
@@ -87,7 +103,14 @@ class Hero extends Component {
     isReadMoreButtonHovered: false,
   }
 
+  handleMouseHover = () => {
+    this.setState(prevState => ({
+      isReadMoreButtonHovered: !prevState.isReadMoreButtonHovered,
+    }))
+  }
+
   render() {
+    const { isReadMoreButtonHovered } = this.state
     const { contentfulItems } = this.props
 
     return (
@@ -103,9 +126,15 @@ class Hero extends Component {
             <StyledHeroBoxesContainer>
               <StyledHeroBox>
                 <StyledHeroBoxTop>
-                  <StyledReadMoreButton type="button">
-                    <StyledReadMoreText>Read more</StyledReadMoreText>
-                    <StyledReadMoreArrow>
+                  <StyledReadMoreButton
+                    type="button"
+                    onPointerEnter={this.handleMouseHover}
+                    onPointerLeave={this.handleMouseHover}
+                  >
+                    <StyledReadMoreText hovered={isReadMoreButtonHovered}>
+                      Read more
+                    </StyledReadMoreText>
+                    <StyledReadMoreArrow hovered={isReadMoreButtonHovered}>
                       <svg
                         aria-hidden="true"
                         data-prefix="fas"
