@@ -12,3 +12,11 @@ a:active,
 a:visited {
   color: inherit;
 }
+
+button {
+  padding: 0;
+}
+
+button:focus {
+  outline: none;
+}
