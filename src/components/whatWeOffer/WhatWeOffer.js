@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import WhatWeOfferHeader from './WhatWeOfferHeader'
+import WhatWeOfferBoxes from './WhatWeOfferBoxes'
 
 const StyledWhatWeOfferContainer = styled.div`
   background: #fff;
-  // padding-top: 43px;
   height: 636px;
 `
 
@@ -13,6 +13,7 @@ const StyledContainerInner = styled.div`
   max-width: 1140px;
   height: 100%;
   position: relative;
+  border: 1px solid blue;
 `
 
 export default () => {
@@ -23,6 +24,7 @@ export default () => {
           title="What we Offer"
           subTitle="Tailored logistic services"
         />
+        <WhatWeOfferBoxes />
       </StyledContainerInner>
     </StyledWhatWeOfferContainer>
   )
