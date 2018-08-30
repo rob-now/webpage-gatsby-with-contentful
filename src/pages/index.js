@@ -30,8 +30,12 @@ class IndexPage extends Component {
 
     return (
       <Fragment>
-        <Hero contentfulItems={contentfulItems} />
-        <WhatWeOffer />
+        <section id="hero">
+          <Hero contentfulItems={contentfulItems} />
+        </section>
+        <section id="what-we-offer">
+          <WhatWeOffer />
+        </section>
       </Fragment>
     )
   }
