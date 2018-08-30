@@ -94,7 +94,17 @@ class Hero extends Component {
                     handlePointerHover={this.handlePointerHover}
                   />
                 </StyledHeroBoxTop>
-                <StyledHeroBoxBottom>Bottom</StyledHeroBoxBottom>
+                <StyledHeroBoxBottom>
+                  {contentfulItems.map(item => (
+                    <Fragment key={`heroBoxLeft-${item.sys.id}`}>
+                      <h3>
+                        {item.fields.heroBox1Title}
+                        {/* <span>linia</span> */}
+                      </h3>
+                      <p>{item.fields.heroBox1Description}</p>
+                    </Fragment>
+                  ))}
+                </StyledHeroBoxBottom>
               </StyledHeroBox>
               <StyledHeroBoxMiddle>
                 <StyledHeroBox>
