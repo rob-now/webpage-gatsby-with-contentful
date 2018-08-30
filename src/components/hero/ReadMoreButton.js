@@ -48,17 +48,22 @@ const StyledReadMoreArrow = styled.span`
     `};
 `
 
-export default ({ text, isReadMoreButtonHovered, handleMouseHover }) => {
+export default ({
+  position,
+  text,
+  isReadMoreButtonHovered,
+  handlePointerHover,
+}) => {
   return (
     <StyledReadMoreButton
       type="button"
-      onPointerEnter={handleMouseHover}
-      onPointerLeave={handleMouseHover}
+      onPointerEnter={() => handlePointerHover(position)}
+      onPointerLeave={() => handlePointerHover(position)}
     >
-      <StyledReadMoreText hovered={isReadMoreButtonHovered}>
+      <StyledReadMoreText hovered={isReadMoreButtonHovered[position]}>
         {text}
       </StyledReadMoreText>
-      <StyledReadMoreArrow hovered={isReadMoreButtonHovered}>
+      <StyledReadMoreArrow hovered={isReadMoreButtonHovered[position]}>
         <svg
           aria-hidden="true"
           data-prefix="fas"

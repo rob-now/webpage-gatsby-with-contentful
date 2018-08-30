@@ -54,12 +54,19 @@ const StyledHeroBoxBottom = styled.div`
 
 class Hero extends Component {
   state = {
-    isReadMoreButtonHovered: false,
+    isReadMoreButtonHovered: {
+      left: false,
+      middle: false,
+      right: false,
+    },
   }
 
-  handleMouseHover = () => {
+  handlePointerHover = position => {
     this.setState(prevState => ({
-      isReadMoreButtonHovered: !prevState.isReadMoreButtonHovered,
+      isReadMoreButtonHovered: {
+        ...prevState.isReadMoreButtonHovered,
+        [position]: !prevState.isReadMoreButtonHovered[position],
+      },
     }))
   }
 
@@ -81,22 +88,37 @@ class Hero extends Component {
               <StyledHeroBox>
                 <StyledHeroBoxTop>
                   <ReadMoreButton
+                    position="left"
                     text="Read more"
                     isReadMoreButtonHovered={isReadMoreButtonHovered}
-                    handleMouseHover={this.handleMouseHover}
+                    handlePointerHover={this.handlePointerHover}
                   />
                 </StyledHeroBoxTop>
                 <StyledHeroBoxBottom>Bottom</StyledHeroBoxBottom>
               </StyledHeroBox>
               <StyledHeroBoxMiddle>
                 <StyledHeroBox>
-                  <StyledHeroBoxTop>Top</StyledHeroBoxTop>
+                  <StyledHeroBoxTop>
+                    <ReadMoreButton
+                      position="middle"
+                      text="Read more"
+                      isReadMoreButtonHovered={isReadMoreButtonHovered}
+                      handlePointerHover={this.handlePointerHover}
+                    />
+                  </StyledHeroBoxTop>
                   <StyledHeroBoxBottom>Bottom</StyledHeroBoxBottom>
                 </StyledHeroBox>
               </StyledHeroBoxMiddle>
               <StyledHeroBox>
                 <StyledHeroBox>
-                  <StyledHeroBoxTop>Top</StyledHeroBoxTop>
+                  <StyledHeroBoxTop>
+                    <ReadMoreButton
+                      position="right"
+                      text="Read more"
+                      isReadMoreButtonHovered={isReadMoreButtonHovered}
+                      handlePointerHover={this.handlePointerHover}
+                    />
+                  </StyledHeroBoxTop>
                   <StyledHeroBoxBottom>Bottom</StyledHeroBoxBottom>
                 </StyledHeroBox>
               </StyledHeroBox>
