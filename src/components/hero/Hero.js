@@ -47,12 +47,6 @@ const StyledHeroBoxTop = styled.div`
   position: relative;
 `
 
-const StyledHeroBoxBottom = styled.div`
-  height: 50%;
-  background: #fff;
-  padding: 0 28px;
-`
-
 class Hero extends Component {
   state = {
     isReadMoreButtonHovered: {
@@ -96,7 +90,7 @@ class Hero extends Component {
                   />
                 </StyledHeroBoxTop>
                 <HeroBoxBottom
-                  position={1}
+                  id={1}
                   titleId="heroBox1Title"
                   descriptionId="heroBox1Description"
                   contentfulItems={contentfulItems}
@@ -112,7 +106,12 @@ class Hero extends Component {
                       handlePointerHover={this.handlePointerHover}
                     />
                   </StyledHeroBoxTop>
-                  <StyledHeroBoxBottom>Bottom</StyledHeroBoxBottom>
+                  <HeroBoxBottom
+                    id={2}
+                    titleId="heroBox2Title"
+                    descriptionId="heroBox2Description"
+                    contentfulItems={contentfulItems}
+                  />
                 </StyledHeroBox>
               </StyledHeroBoxMiddle>
               <StyledHeroBox>
@@ -125,7 +124,12 @@ class Hero extends Component {
                       handlePointerHover={this.handlePointerHover}
                     />
                   </StyledHeroBoxTop>
-                  <StyledHeroBoxBottom>Bottom</StyledHeroBoxBottom>
+                  <HeroBoxBottom
+                    id={3}
+                    titleId="heroBox3Title"
+                    descriptionId="heroBox3Description"
+                    contentfulItems={contentfulItems}
+                  />
                 </StyledHeroBox>
               </StyledHeroBox>
             </StyledHeroBoxesContainer>

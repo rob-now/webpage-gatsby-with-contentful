@@ -31,11 +31,11 @@ const StyledLine = styled.span`
   border-bottom: 3px solid #fdc300;
 `
 
-export default ({ position, titleId, descriptionId, contentfulItems }) => {
+export default ({ id, titleId, descriptionId, contentfulItems }) => {
   return (
     <StyledHeroBoxBottom>
       {contentfulItems.map(item => (
-        <Fragment key={`heroBox${position}-${item.sys.id}`}>
+        <Fragment key={`heroBox${id}-${item.sys.id}`}>
           <StyledH3>
             {item.fields[titleId] || 'Lorem ipsum'}
             <StyledLine />
