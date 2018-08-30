@@ -34,7 +34,7 @@ class IndexPage extends Component {
           <Hero contentfulItems={contentfulItems} />
         </section>
         <section id="what-we-offer">
-          <WhatWeOffer />
+          <WhatWeOffer contentfulItems={contentfulItems} />
         </section>
       </Fragment>
     )

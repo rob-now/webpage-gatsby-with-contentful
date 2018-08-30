@@ -16,15 +16,12 @@ const StyledContainerInner = styled.div`
   border: 1px solid blue;
 `
 
-export default () => {
+export default ({ contentfulItems }) => {
   return (
     <StyledWhatWeOfferContainer>
       <StyledContainerInner>
-        <WhatWeOfferHeader
-          title="What we Offer"
-          subTitle="Tailored logistic services"
-        />
-        <WhatWeOfferBoxes />
+        <WhatWeOfferHeader contentfulItems={contentfulItems} />
+        <WhatWeOfferBoxes contentfulItems={contentfulItems} />
       </StyledContainerInner>
     </StyledWhatWeOfferContainer>
   )

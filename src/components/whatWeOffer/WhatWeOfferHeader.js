@@ -25,12 +25,15 @@ const StyledLine = styled.span`
   margin: 0 auto;
 `
 
-export default ({ title, subTitle }) => {
-  return (
-    <Fragment>
-      <StyledH2>{title}</StyledH2>
-      <StyledSubTitle>{subTitle}</StyledSubTitle>
-      <StyledLine />
-    </Fragment>
+export default ({ contentfulItems }) => {
+  return contentfulItems.map(
+    item =>
+      item.sys.contentType.sys.id === 'whatWeOffer' && (
+        <Fragment>
+          <StyledH2>{item.fields.whatWeOfferTitle}</StyledH2>
+          <StyledSubTitle>{item.fields.whatWeOfferSubTitle}</StyledSubTitle>
+          <StyledLine />
+        </Fragment>
+      )
   )
 }
