@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ReadMoreButton from './ReadMoreButton'
+import HeroBtnReadMore from './HeroBtnReadMore'
 
 const StyledHeroBoxTop = styled.div`
   height: 50%;
@@ -11,7 +11,7 @@ const StyledHeroBoxTop = styled.div`
 export default ({ id, isReadMoreButtonHovered, handlePointerHover }) => {
   return (
     <StyledHeroBoxTop>
-      <ReadMoreButton
+      <HeroBtnReadMore
         id={id}
         text="Read more"
         isReadMoreButtonHovered={isReadMoreButtonHovered}

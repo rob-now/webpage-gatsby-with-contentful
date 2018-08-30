@@ -2,16 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledReadMoreButton = styled.button`
-  border: none;
-  background: none;
   display: flex;
   align-items: center;
   position: absolute;
   bottom: 0;
   right: 0;
-  &:hover {
-    cursor: pointer;
-  }
 `
 
 const StyledReadMoreText = styled.span`
