@@ -2,8 +2,7 @@ import React, { Component, Fragment } from 'react'
 import Nav from '../nav/Nav'
 import HeroTitle from './HeroTitle'
 import styled from 'styled-components'
-import ReadMoreButton from './ReadMoreButton'
-import HeroBoxBottom from './HeroBoxBottom'
+import HeroBoxes from './HeroBoxes'
 
 const StyledHeroContainer = styled.div`
   background: #122636;
@@ -21,29 +20,6 @@ const StyledHeroContainerBottom = styled.div`
 const StyledContainerInner = styled.div`
   margin: 0 auto;
   max-width: 1140px;
-  position: relative;
-`
-
-const StyledHeroBoxesContainer = styled(StyledContainerInner)`
-  display: flex;
-  position: absolute;
-  top: -200px;
-`
-
-const StyledHeroBox = styled.div`
-  width: 360px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-`
-
-const StyledHeroBoxMiddle = styled(StyledHeroBox)`
-  margin: 0 30px;
-`
-
-const StyledHeroBoxTop = styled.div`
-  height: 50%;
-  background: #dededd;
   position: relative;
 `
 
@@ -79,60 +55,11 @@ class Hero extends Component {
         </StyledHeroContainer>
         <StyledHeroContainerBottom>
           <StyledContainerInner>
-            <StyledHeroBoxesContainer>
-              <StyledHeroBox>
-                <StyledHeroBoxTop>
-                  <ReadMoreButton
-                    position={1}
-                    text="Read more"
-                    isReadMoreButtonHovered={isReadMoreButtonHovered}
-                    handlePointerHover={this.handlePointerHover}
-                  />
-                </StyledHeroBoxTop>
-                <HeroBoxBottom
-                  id={1}
-                  titleId="heroBox1Title"
-                  descriptionId="heroBox1Description"
-                  contentfulItems={contentfulItems}
-                />
-              </StyledHeroBox>
-              <StyledHeroBoxMiddle>
-                <StyledHeroBox>
-                  <StyledHeroBoxTop>
-                    <ReadMoreButton
-                      position={2}
-                      text="Read more"
-                      isReadMoreButtonHovered={isReadMoreButtonHovered}
-                      handlePointerHover={this.handlePointerHover}
-                    />
-                  </StyledHeroBoxTop>
-                  <HeroBoxBottom
-                    id={2}
-                    titleId="heroBox2Title"
-                    descriptionId="heroBox2Description"
-                    contentfulItems={contentfulItems}
-                  />
-                </StyledHeroBox>
-              </StyledHeroBoxMiddle>
-              <StyledHeroBox>
-                <StyledHeroBox>
-                  <StyledHeroBoxTop>
-                    <ReadMoreButton
-                      position={3}
-                      text="Read more"
-                      isReadMoreButtonHovered={isReadMoreButtonHovered}
-                      handlePointerHover={this.handlePointerHover}
-                    />
-                  </StyledHeroBoxTop>
-                  <HeroBoxBottom
-                    id={3}
-                    titleId="heroBox3Title"
-                    descriptionId="heroBox3Description"
-                    contentfulItems={contentfulItems}
-                  />
-                </StyledHeroBox>
-              </StyledHeroBox>
-            </StyledHeroBoxesContainer>
+            <HeroBoxes
+              isReadMoreButtonHovered={isReadMoreButtonHovered}
+              handlePointerHover={this.handlePointerHover}
+              contentfulItems={contentfulItems}
+            />
           </StyledContainerInner>
         </StyledHeroContainerBottom>
       </Fragment>
