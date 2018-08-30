@@ -36,7 +36,7 @@ const StyledReadMoreText = styled.span`
 const StyledReadMoreArrow = styled.span`
   width: 30px;
   height: 34px;
-  line-height: 30px;
+  line-height: 31px;
   background: #2f3840;
   transition: background 0.3s;
 
@@ -70,7 +70,6 @@ export default ({
           data-icon="angle-right"
           width="6px"
           height="9px"
-          class="svg-inline--fa fa-angle-right fa-w-8"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 256 512"
