@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from './nav/Nav'
+import Nav from '../nav/Nav'
 import HeroTitle from './HeroTitle'
 import styled from 'styled-components'
 
