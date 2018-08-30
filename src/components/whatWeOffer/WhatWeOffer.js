@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import WhatWeOfferTitle from './WhatWeOfferTitle'
+import WhatWeOfferHeader from './WhatWeOfferHeader'
 
 const StyledWhatWeOfferContainer = styled.div`
   background: #fff;
@@ -19,7 +19,10 @@ export default () => {
   return (
     <StyledWhatWeOfferContainer>
       <StyledContainerInner>
-        <WhatWeOfferTitle />
+        <WhatWeOfferHeader
+          title="What we Offer"
+          subTitle="Tailored logistic services"
+        />
       </StyledContainerInner>
     </StyledWhatWeOfferContainer>
   )

@@ -25,11 +25,11 @@ const StyledLine = styled.span`
   margin: 0 auto;
 `
 
-export default () => {
+export default ({ title, subTitle }) => {
   return (
     <Fragment>
-      <StyledH2>What we Offer</StyledH2>
-      <StyledSubTitle>Tailored logistic services</StyledSubTitle>
+      <StyledH2>{title}</StyledH2>
+      <StyledSubTitle>{subTitle}</StyledSubTitle>
       <StyledLine />
     </Fragment>
   )
