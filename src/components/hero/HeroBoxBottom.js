@@ -12,12 +12,15 @@ const StyledHeroBoxBottom = styled.div`
 export default ({ id, titleId, descriptionId, contentfulItems }) => {
   return (
     <StyledHeroBoxBottom>
-      {contentfulItems.map(item => (
-        <Fragment key={`heroBox${id}-${item.sys.id}`}>
-          <HeroBoxTitle item={item} titleId={titleId} />
-          <HeroBoxDescription item={item} descriptionId={descriptionId} />
-        </Fragment>
-      ))}
+      {contentfulItems.map(
+        item =>
+          item.sys.contentType.sys.id === 'hero' && (
+            <Fragment key={`heroBox${id}-${item.sys.id}`}>
+              <HeroBoxTitle item={item} titleId={titleId} />
+              <HeroBoxDescription item={item} descriptionId={descriptionId} />
+            </Fragment>
+          )
+      )}
     </StyledHeroBoxBottom>
   )
 }
