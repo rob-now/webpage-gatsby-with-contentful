@@ -3,6 +3,7 @@ import Nav from '../nav/Nav'
 import HeroTitle from './HeroTitle'
 import styled from 'styled-components'
 import ReadMoreButton from './ReadMoreButton'
+import HeroBoxBottom from './HeroBoxBottom'
 
 const StyledHeroContainer = styled.div`
   background: #122636;
@@ -52,30 +53,6 @@ const StyledHeroBoxBottom = styled.div`
   padding: 0 28px;
 `
 
-const StyledH3 = styled.h3`
-  font-size: 18px;
-  font-weight: bold;
-  // line-height: 60px;
-  color: #333;
-  text-transform: uppercase;
-  margin: 44px 0 24px;
-  position: relative;
-`
-
-const StyledParagraph = styled.p`
-  font-size: 13px;
-  line-height: 20px;
-  color: #777;
-`
-
-const StyledLine = styled.span`
-  position: absolute;
-  left: 0;
-  top: -9px;
-  width: 30px;
-  border-bottom: 3px solid #fdc300;
-`
-
 class Hero extends Component {
   state = {
     isReadMoreButtonHovered: {
@@ -118,19 +95,12 @@ class Hero extends Component {
                     handlePointerHover={this.handlePointerHover}
                   />
                 </StyledHeroBoxTop>
-                <StyledHeroBoxBottom>
-                  {contentfulItems.map(item => (
-                    <Fragment key={`heroBoxLeft-${item.sys.id}`}>
-                      <StyledH3>
-                        {item.fields.heroBox1Title}
-                        <StyledLine />
-                      </StyledH3>
-                      <StyledParagraph>
-                        {item.fields.heroBox1Description}
-                      </StyledParagraph>
-                    </Fragment>
-                  ))}
-                </StyledHeroBoxBottom>
+                <HeroBoxBottom
+                  position={1}
+                  titleId="heroBox1Title"
+                  descriptionId="heroBox1Description"
+                  contentfulItems={contentfulItems}
+                />
               </StyledHeroBox>
               <StyledHeroBoxMiddle>
                 <StyledHeroBox>
