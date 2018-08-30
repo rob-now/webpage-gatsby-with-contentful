@@ -13,7 +13,6 @@ const StyledContainerInner = styled.div`
   max-width: 1140px;
   height: 100%;
   position: relative;
-  border: 1px solid blue;
 `
 
 export default ({ contentfulItems }) => {

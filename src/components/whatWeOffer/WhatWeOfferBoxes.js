@@ -10,6 +10,7 @@ const StyledWhatWeOfferBoxes = styled.div`
   margin: 40px 0 70px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `
 
 export default ({ contentfulItems }) => {

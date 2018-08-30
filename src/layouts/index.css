@@ -13,6 +13,11 @@ a:visited {
   color: inherit;
 }
 
+p,
+img {
+  margin: 0;
+}
+
 button {
   padding: 0;
   border: none;
