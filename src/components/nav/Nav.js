@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import logo from '../img/logo.png'
 import Link from 'gatsby-link'
 import SearchIcon from './SearchIcon'
+import Brand from './Brand'
 
 const StyledNavigation = styled.nav`
   display: flex;
@@ -16,34 +16,6 @@ const StyledNavigation = styled.nav`
   -webkit-box-shadow: 0px -8px 0px 0px rgba(255, 255, 255, 0.4);
   -moz-box-shadow: 0px -8px 0px 0px rgba(255, 255, 255, 0.4);
   box-shadow: 0px -8px 0px 0px rgba(255, 255, 255, 0.4);
-`
-
-const StyledLogo = styled.img`
-  margin: 0 23px;
-`
-
-const StyledNavigationBrand = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-const StyledBrandText = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const StyledBrandTextMain = styled.span`
-  text-transform: uppercase;
-  color: #010101;
-  font-size: 26px;
-  line-height: 30px;
-  font-weight: bold;
-`
-
-const StyledBrandTextSecondary = styled.span`
-  font-size: 11px;
-  line-height: 10px;
-  color: #777;
 `
 
 const StyledNavigationList = styled.ul`
@@ -98,15 +70,7 @@ const StyledNavigationUnderline = styled.span`
 const Nav = () => (
   <Fragment>
     <StyledNavigation>
-      <StyledNavigationBrand>
-        <StyledLogo src={logo} alt="StyledLogo" />
-        <StyledBrandText>
-          <StyledBrandTextMain>Trucking</StyledBrandTextMain>
-          <StyledBrandTextSecondary>
-            Logistics & Transportation
-          </StyledBrandTextSecondary>
-        </StyledBrandText>
-      </StyledNavigationBrand>
+      <Brand />
       <StyledNavigationList>
         <Link exact to="/" activeStyle={LinkActive}>
           <StyledNavigationItem>Home</StyledNavigationItem>
