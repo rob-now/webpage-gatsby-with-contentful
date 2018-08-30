@@ -9,6 +9,15 @@ const StyledBtnCTA = styled.button`
   color: #fff;
   position: absolute;
   bottom: 43px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  transition: background 0.3s;
+  &: hover {
+    background: #ffca16;
+    transition: background 0.3s;
+  }
 `
 
 export default ({ text }) => {
