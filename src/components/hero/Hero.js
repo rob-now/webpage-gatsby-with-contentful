@@ -3,6 +3,7 @@ import Nav from '../nav/Nav'
 import HeroTitle from './HeroTitle'
 import styled from 'styled-components'
 import HeroBoxes from './HeroBoxes'
+import HeroBtnCTA from './HeroBtnCTA'
 
 const StyledHeroContainer = styled.div`
   background: #122636;
@@ -20,6 +21,7 @@ const StyledHeroContainerBottom = styled.div`
 const StyledContainerInner = styled.div`
   margin: 0 auto;
   max-width: 1140px;
+  height: 100%;
   position: relative;
 `
 
@@ -60,6 +62,7 @@ class Hero extends Component {
               handlePointerHover={this.handlePointerHover}
               contentfulItems={contentfulItems}
             />
+            <HeroBtnCTA text="View details" />
           </StyledContainerInner>
         </StyledHeroContainerBottom>
       </Fragment>
