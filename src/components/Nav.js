@@ -62,6 +62,7 @@ const StyledNavigationItem = styled.li`
   padding: 0 10px;
   margin: 0 23px 0 0;
   height: 100%;
+  position: relative;
   &:hover {
     background: #f6f6f6;
     cursor: pointer;
@@ -83,9 +84,15 @@ const StyledNavigationSearchIcon = styled.li`
 `
 
 const LinkActive = {
-  color: 'red',
   height: '100%',
 }
+
+const StyledNavigationUnderline = styled.span`
+  position: absolute;
+  bottom: 0;
+  border-bottom: 5px solid #006db7;
+  width: 60px;
+`
 
 const Nav = () => (
   <Fragment>
@@ -102,6 +109,7 @@ const Nav = () => (
       <StyledNavigationList>
         <Link exact to="/" activeStyle={LinkActive}>
           <StyledNavigationItem>Home</StyledNavigationItem>
+          <StyledNavigationUnderline />
         </Link>
         <StyledNavigationItem>
           <StyledNavigationLink href="#">About us</StyledNavigationLink>
