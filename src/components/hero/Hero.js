@@ -32,7 +32,6 @@ const StyledHeroBoxesContainer = styled(StyledContainerInner)`
 const StyledHeroBox = styled.div`
   width: 360px;
   height: 400px;
-  color: purple;
   display: flex;
   flex-direction: column;
 `
@@ -50,6 +49,31 @@ const StyledHeroBoxTop = styled.div`
 const StyledHeroBoxBottom = styled.div`
   height: 50%;
   background: #fff;
+  padding: 0 28px;
+`
+
+const StyledH3 = styled.h3`
+  font-size: 18px;
+  font-weight: bold;
+  // line-height: 60px;
+  color: #333;
+  text-transform: uppercase;
+  margin: 44px 0 24px;
+  position: relative;
+`
+
+const StyledParagraph = styled.p`
+  font-size: 13px;
+  line-height: 20px;
+  color: #777;
+`
+
+const StyledLine = styled.span`
+  position: absolute;
+  left: 0;
+  top: -9px;
+  width: 30px;
+  border-bottom: 3px solid #fdc300;
 `
 
 class Hero extends Component {
@@ -97,11 +121,13 @@ class Hero extends Component {
                 <StyledHeroBoxBottom>
                   {contentfulItems.map(item => (
                     <Fragment key={`heroBoxLeft-${item.sys.id}`}>
-                      <h3>
+                      <StyledH3>
                         {item.fields.heroBox1Title}
-                        {/* <span>linia</span> */}
-                      </h3>
-                      <p>{item.fields.heroBox1Description}</p>
+                        <StyledLine />
+                      </StyledH3>
+                      <StyledParagraph>
+                        {item.fields.heroBox1Description}
+                      </StyledParagraph>
                     </Fragment>
                   ))}
                 </StyledHeroBoxBottom>
