@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { createClient } from 'contentful'
 import contentfulConfig from '../../.contentful.json'
 import Hero from '../components/Hero'
-import Nav from '../components/Nav'
 
 class IndexPage extends Component {
   state = {

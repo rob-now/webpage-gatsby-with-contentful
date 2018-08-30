@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import logo from './img/logo.png'
+import logo from '../img/logo.png'
 import Link from 'gatsby-link'
 
 const StyledNavigation = styled.nav`
@@ -62,7 +62,6 @@ const StyledNavigationItem = styled.li`
   padding: 0 10px;
   margin: 0 23px 0 0;
   height: 100%;
-  position: relative;
   &:hover {
     background: #f6f6f6;
     cursor: pointer;
@@ -84,6 +83,7 @@ const StyledNavigationSearchIcon = styled.li`
 `
 
 const LinkActive = {
+  position: 'relative',
   height: '100%',
 }
 
