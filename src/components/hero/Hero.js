@@ -79,9 +79,9 @@ const StyledLine = styled.span`
 class Hero extends Component {
   state = {
     isReadMoreButtonHovered: {
-      left: false,
-      middle: false,
-      right: false,
+      1: false,
+      2: false,
+      3: false,
     },
   }
 
@@ -112,7 +112,7 @@ class Hero extends Component {
               <StyledHeroBox>
                 <StyledHeroBoxTop>
                   <ReadMoreButton
-                    position="left"
+                    position={1}
                     text="Read more"
                     isReadMoreButtonHovered={isReadMoreButtonHovered}
                     handlePointerHover={this.handlePointerHover}
@@ -136,7 +136,7 @@ class Hero extends Component {
                 <StyledHeroBox>
                   <StyledHeroBoxTop>
                     <ReadMoreButton
-                      position="middle"
+                      position={2}
                       text="Read more"
                       isReadMoreButtonHovered={isReadMoreButtonHovered}
                       handlePointerHover={this.handlePointerHover}
@@ -149,7 +149,7 @@ class Hero extends Component {
                 <StyledHeroBox>
                   <StyledHeroBoxTop>
                     <ReadMoreButton
-                      position="right"
+                      position={3}
                       text="Read more"
                       isReadMoreButtonHovered={isReadMoreButtonHovered}
                       handlePointerHover={this.handlePointerHover}
