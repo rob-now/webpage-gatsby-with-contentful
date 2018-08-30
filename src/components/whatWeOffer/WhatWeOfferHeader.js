@@ -29,7 +29,7 @@ export default ({ contentfulItems }) => {
   return contentfulItems.map(
     item =>
       item.sys.contentType.sys.id === 'whatWeOffer' && (
-        <Fragment>
+        <Fragment key={`whatWeOfferHeader-${item.sys.id}`}>
           <StyledH2>{item.fields.whatWeOfferTitle}</StyledH2>
           <StyledSubTitle>{item.fields.whatWeOfferSubTitle}</StyledSubTitle>
           <StyledLine />
