@@ -24,6 +24,8 @@ export default ({ contentfulItems }) => {
   return contentfulItems
     .filter(item => item.sys.contentType.sys.id === 'hero')
     .map(item => (
-      <StyledBtnCTA type="button">{item.fields.heroCtaButton}</StyledBtnCTA>
+      <StyledBtnCTA key={`CTAButton${item.sys.id}`} type="button">
+        {item.fields.heroCtaButton}
+      </StyledBtnCTA>
     ))
 }
