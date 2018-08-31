@@ -48,26 +48,27 @@ class Hero extends Component {
     const { isReadMoreButtonHovered } = this.state
     const { isFetching, contentfulItems } = this.props
 
-    return isFetching ? (
-      <Loader />
-    ) : (
+    return (
       <Fragment>
-        <StyledHeroContainer>
-          <StyledContainerInner>
-            <Nav />
-            <HeroTitle contentfulItems={contentfulItems} />
-          </StyledContainerInner>
-        </StyledHeroContainer>
-        <StyledHeroContainerBottom>
-          <StyledContainerInner>
-            <HeroBoxes
-              isReadMoreButtonHovered={isReadMoreButtonHovered}
-              handlePointerHover={this.handlePointerHover}
-              contentfulItems={contentfulItems}
-            />
-            <HeroBtnCTA contentfulItems={contentfulItems} />
-          </StyledContainerInner>
-        </StyledHeroContainerBottom>
+        {isFetching && <Loader />}
+        <Fragment>
+          <StyledHeroContainer>
+            <StyledContainerInner>
+              <Nav />
+              <HeroTitle contentfulItems={contentfulItems} />
+            </StyledContainerInner>
+          </StyledHeroContainer>
+          <StyledHeroContainerBottom>
+            <StyledContainerInner>
+              <HeroBoxes
+                isReadMoreButtonHovered={isReadMoreButtonHovered}
+                handlePointerHover={this.handlePointerHover}
+                contentfulItems={contentfulItems}
+              />
+              <HeroBtnCTA contentfulItems={contentfulItems} />
+            </StyledContainerInner>
+          </StyledHeroContainerBottom>
+        </Fragment>
       </Fragment>
     )
   }
