@@ -3,13 +3,20 @@ import { createClient } from 'contentful'
 import contentfulConfig from '../../.contentful.json'
 import Hero from '../components/hero/Hero'
 import WhatWeOffer from '../components/whatWeOffer/WhatWeOffer'
+import Loader from '../components/loader/Loader'
 
 class IndexPage extends Component {
   state = {
     contentfulItems: [],
+    isFetching: false,
+    error: null,
   }
 
   componentDidMount() {
+    this.setState({
+      isFetching: true,
+    })
+
     const client = createClient({
       space: contentfulConfig.spaceId,
       accessToken: contentfulConfig.accessToken,
@@ -20,15 +27,23 @@ class IndexPage extends Component {
       .then(res => {
         this.setState({
           contentfulItems: res.items,
+          isFetching: false,
         })
       })
-      .catch(err => err.message)
+      .catch(error =>
+        this.setState({
+          isFetching: false,
+          error,
+        })
+      )
   }
 
   render() {
-    const { contentfulItems } = this.state
+    const { contentfulItems, isFetching } = this.state
 
-    return (
+    return isFetching ? (
+      <Loader />
+    ) : (
       <Fragment>
         <section id="hero">
           <Hero contentfulItems={contentfulItems} />
