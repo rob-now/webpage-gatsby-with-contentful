@@ -26,12 +26,15 @@ class HeroTitle extends Component {
 
     return (
       <div>
-        {contentfulItems.map(item => (
-          <H1 key={`heroTitle-${item.sys.id}`}>
-            <StyledLine />
-            {item.fields.heroTitle}
-          </H1>
-        ))}
+        {contentfulItems.map(
+          item =>
+            item.sys.contentType.sys.id === 'hero' && (
+              <H1 key={`heroTitle-${item.sys.id}`}>
+                <StyledLine />
+                {item.fields.heroTitle || 'Lorem ipsum'}
+              </H1>
+            )
+        )}
       </div>
     )
   }
