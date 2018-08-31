@@ -4,6 +4,7 @@ import HeroTitle from './HeroTitle'
 import styled from 'styled-components'
 import HeroBoxes from './HeroBoxes'
 import HeroBtnCTA from './HeroBtnCTA'
+import Loader from '../loader/Loader'
 
 const StyledHeroContainer = styled.div`
   background: #122636;
@@ -45,9 +46,11 @@ class Hero extends Component {
 
   render() {
     const { isReadMoreButtonHovered } = this.state
-    const { contentfulItems } = this.props
+    const { isFetching, contentfulItems } = this.props
 
-    return (
+    return isFetching ? (
+      <Loader />
+    ) : (
       <Fragment>
         <StyledHeroContainer>
           <StyledContainerInner>

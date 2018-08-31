@@ -15,8 +15,8 @@ const StyledContainerInner = styled.div`
   position: relative;
 `
 
-export default ({ contentfulItems }) => {
-  return (
+export default ({ isFetching, contentfulItems }) => {
+  return isFetching ? null : (
     <StyledWhatWeOfferContainer>
       <StyledContainerInner>
         <WhatWeOfferHeader contentfulItems={contentfulItems} />

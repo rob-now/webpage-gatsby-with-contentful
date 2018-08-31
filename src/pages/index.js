@@ -3,7 +3,6 @@ import { createClient } from 'contentful'
 import contentfulConfig from '../../.contentful.json'
 import Hero from '../components/hero/Hero'
 import WhatWeOffer from '../components/whatWeOffer/WhatWeOffer'
-import Loader from '../components/loader/Loader'
 
 class IndexPage extends Component {
   state = {
@@ -41,15 +40,16 @@ class IndexPage extends Component {
   render() {
     const { contentfulItems, isFetching } = this.state
 
-    return isFetching ? (
-      <Loader />
-    ) : (
+    return (
       <Fragment>
         <section id="hero">
-          <Hero contentfulItems={contentfulItems} />
+          <Hero isFetching={isFetching} contentfulItems={contentfulItems} />
         </section>
         <section id="what-we-offer">
-          <WhatWeOffer contentfulItems={contentfulItems} />
+          <WhatWeOffer
+            isFetching={isFetching}
+            contentfulItems={contentfulItems}
+          />
         </section>
       </Fragment>
     )
