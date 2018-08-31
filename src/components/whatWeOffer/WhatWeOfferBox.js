@@ -29,6 +29,7 @@ const StyledWhatWeOfferBox = styled.div`
 
 const StyledWwoBoxIcon = styled.img`
   padding: 0 30px;
+  height: 70px;
 `
 
 const StyledH3 = styled.h3`
