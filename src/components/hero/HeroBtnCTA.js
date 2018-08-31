@@ -20,6 +20,10 @@ const StyledBtnCTA = styled.button`
   }
 `
 
-export default ({ text }) => {
-  return <StyledBtnCTA type="button">{text}</StyledBtnCTA>
+export default ({ contentfulItems }) => {
+  return contentfulItems
+    .filter(item => item.sys.contentType.sys.id === 'hero')
+    .map(item => (
+      <StyledBtnCTA type="button">{item.fields.heroCtaButton}</StyledBtnCTA>
+    ))
 }

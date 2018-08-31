@@ -62,7 +62,7 @@ class Hero extends Component {
               handlePointerHover={this.handlePointerHover}
               contentfulItems={contentfulItems}
             />
-            <HeroBtnCTA text="View details" />
+            <HeroBtnCTA contentfulItems={contentfulItems} />
           </StyledContainerInner>
         </StyledHeroContainerBottom>
       </Fragment>
