@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import favicon from '../components/img/favicon.png'
 
 import './index.css'
 
@@ -12,17 +13,16 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
+      link={[
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: favicon,
+          sizes: '16x16',
+        },
+      ]}
     />
-    <div
-    // style={{
-    //   margin: '0 auto',
-    //   maxWidth: 1140,
-    //   padding: '0px 1.0875rem 1.45rem',
-    //   paddingTop: 0,
-    // }}
-    >
-      {children()}
-    </div>
+    <div>{children()}</div>
   </div>
 )
 
