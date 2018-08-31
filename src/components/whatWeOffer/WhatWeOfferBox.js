@@ -58,21 +58,20 @@ const StyledWwoBoxContent = styled.div`
 export default ({ id, img, contentfulItems, titleId, descriptionId }) => {
   return (
     <StyledWhatWeOfferBox id={id}>
-      {contentfulItems.map(
-        item =>
-          item.sys.contentType.sys.id === 'whatWeOffer' && (
-            <Fragment key={`whatWeOfferBox${id}-${item.sys.id}`}>
-              <StyledWwoBoxIcon src={img} alt={item.fields[titleId]} />
-              <StyledWwoBoxContent>
-                <StyledH3>{item.fields[titleId] || 'Lorem ipsum'}</StyledH3>
-                <StyledParagraph>
-                  {item.fields[descriptionId] ||
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus nulla labore provident repellendus assumenda consequatur...'}
-                </StyledParagraph>
-              </StyledWwoBoxContent>
-            </Fragment>
-          )
-      )}
+      {contentfulItems
+        .filter(item => item.sys.contentType.sys.id === 'whatWeOffer')
+        .map(item => (
+          <Fragment key={`whatWeOfferBox${id}-${item.sys.id}`}>
+            <StyledWwoBoxIcon src={img} alt={item.fields[titleId]} />
+            <StyledWwoBoxContent>
+              <StyledH3>{item.fields[titleId] || 'Lorem ipsum'}</StyledH3>
+              <StyledParagraph>
+                {item.fields[descriptionId] ||
+                  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus nulla labore provident repellendus assumenda consequatur...'}
+              </StyledParagraph>
+            </StyledWwoBoxContent>
+          </Fragment>
+        ))}
     </StyledWhatWeOfferBox>
   )
 }

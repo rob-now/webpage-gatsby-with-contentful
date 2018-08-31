@@ -26,16 +26,15 @@ const StyledLine = styled.span`
 `
 
 export default ({ contentfulItems }) => {
-  return contentfulItems.map(
-    item =>
-      item.sys.contentType.sys.id === 'whatWeOffer' && (
-        <Fragment key={`whatWeOfferHeader-${item.sys.id}`}>
-          <StyledH2>{item.fields.whatWeOfferTitle || 'Lorem ipsum'}</StyledH2>
-          <StyledSubTitle>
-            {item.fields.whatWeOfferSubTitle || 'Lorem ipsum'}
-          </StyledSubTitle>
-          <StyledLine />
-        </Fragment>
-      )
-  )
+  return contentfulItems
+    .filter(item => item.sys.contentType.sys.id === 'whatWeOffer')
+    .map(item => (
+      <Fragment key={`whatWeOfferHeader-${item.sys.id}`}>
+        <StyledH2>{item.fields.whatWeOfferTitle || 'Lorem ipsum'}</StyledH2>
+        <StyledSubTitle>
+          {item.fields.whatWeOfferSubTitle || 'Lorem ipsum'}
+        </StyledSubTitle>
+        <StyledLine />
+      </Fragment>
+    ))
 }
